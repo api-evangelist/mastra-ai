@@ -1,0 +1,292 @@
+aid: mastra-ai
+name: Mastra
+description: Mastra is a TypeScript framework for building AI-powered applications and agents, built by the team
+  behind Gatsby (Sam Bhagwat, Abhi Aiyer, Shane Thomas). The framework provides production-grade primitives for
+  agents, workflows, RAG, tools, memory, evals, voice, and observability, and integrates with 40+ model providers
+  through the Vercel AI SDK. The framework is Apache 2.0 licensed open source, with a hosted commercial offering
+  (Mastra Cloud) for deployment, tracing, and team collaboration, and an enterprise self-hosted edition for
+  regulated environments.
+kind: contract
+position: Producing
+access: Open Source
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Agents
+- Artificial Intelligence
+- Workflows
+- RAG
+- MCP
+- Memory
+- Evaluation
+- LLM Observability
+- TypeScript
+- Voice
+- Open Source
+created: '2026-05-25'
+modified: '2026-05-25'
+url: https://raw.githubusercontent.com/api-evangelist/mastra-ai/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+x-type: opensource
+x-tier: 2
+apis:
+- aid: mastra-ai:mastra-framework
+  name: Mastra Framework
+  description: The Mastra framework is a TypeScript-first agentic stack distributed as the @mastra/* family of npm
+    packages. The core package wires agents, workflows, memory, RAG, tools, MCP, evals, voice, and observability
+    into a single Mastra instance that can be embedded in Next.js, Express, Hono, SvelteKit, Astro, Nest, Fastify,
+    Koa, or stood up as a standalone server. Models are reached through the Vercel AI SDK so any of 40+ providers
+    (OpenAI, Anthropic, Google, Bedrock, Groq, etc.) plug in through one interface. Apache 2.0 licensed.
+  humanURL: https://mastra.ai/docs
+  tags:
+  - Agents
+  - Artificial Intelligence
+  - Workflows
+  - TypeScript
+  - Framework
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra
+  - type: PackageManager
+    url: https://www.npmjs.com/package/@mastra/core
+  - type: License
+    url: https://github.com/mastra-ai/mastra/blob/main/LICENSE.md
+  - type: GettingStarted
+    url: https://mastra.ai/docs/getting-started/installation
+  - type: Examples
+    url: https://github.com/mastra-ai/mastra/tree/main/examples
+  - type: Templates
+    url: https://mastra.ai/templates
+- aid: mastra-ai:mastra-agents
+  name: Mastra Agents
+  description: Mastra agents define behavior with a model, instructions, tools, memory, and processors, then expose
+    .generate() and .stream() for typed text, object, and structured output generation. Agents support multi-step
+    tool calls, dynamic instructions, runtime context, scoped memory, and Vercel AI SDK v5 message format.
+  humanURL: https://mastra.ai/docs/agents/overview
+  tags:
+  - Agents
+  - Artificial Intelligence
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/agents/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/packages/core/src/agent
+- aid: mastra-ai:mastra-workflows
+  name: Mastra Workflows
+  description: Workflows are durable, graph-based pipelines composed from typed steps with branching, parallelism,
+    loops, suspension, human-in-the-loop, and event triggers. Step inputs and outputs are validated against Zod
+    schemas and each run is persisted so workflows can be replayed, resumed, and observed.
+  humanURL: https://mastra.ai/docs/workflows/overview
+  tags:
+  - Workflows
+  - Orchestration
+  - Durable Execution
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/workflows/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/workflows
+- aid: mastra-ai:mastra-memory
+  name: Mastra Memory
+  description: The memory package provides conversation history, working memory, and semantic recall for agents,
+    pluggable across PostgreSQL, LibSQL, Redis, Upstash, MongoDB, MS SQL, DynamoDB, Cloudflare D1, ClickHouse,
+    Couchbase, and other backends. Vector recall integrates with PgVector, Pinecone, Chroma, Qdrant, Astra,
+    Elasticsearch, OpenSearch, Turbopuffer, Vectorize, LanceDB, DuckDB, S3Vectors, and more.
+  humanURL: https://mastra.ai/docs/memory/overview
+  tags:
+  - Memory
+  - Vector Database
+  - Persistence
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/memory/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/packages/memory
+  - type: PackageManager
+    url: https://www.npmjs.com/package/@mastra/memory
+- aid: mastra-ai:mastra-rag
+  name: Mastra RAG
+  description: The RAG package provides document loaders, chunkers, embedders (including FastEmbed local
+    embeddings), rerankers, and retrieval helpers that compose with any Mastra vector store. Supports semantic,
+    keyword, and hybrid retrieval, metadata filtering, and graph RAG patterns.
+  humanURL: https://mastra.ai/docs/rag/overview
+  tags:
+  - RAG
+  - Retrieval
+  - Embeddings
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/rag/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/packages/rag
+  - type: PackageManager
+    url: https://www.npmjs.com/package/@mastra/rag
+- aid: mastra-ai:mastra-mcp
+  name: Mastra MCP
+  description: First-class Model Context Protocol support — Mastra ships an MCP client for connecting to any MCP
+    server and exposing its tools to agents, plus an MCP server implementation for publishing your own agents,
+    workflows, and tools as MCP-callable capabilities. Includes a docs MCP server and a registry-of-registries.
+  humanURL: https://mastra.ai/docs/mcp/overview
+  tags:
+  - MCP
+  - Model Context Protocol
+  - Tools
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/mcp/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/packages/mcp
+  - type: PackageManager
+    url: https://www.npmjs.com/package/@mastra/mcp
+- aid: mastra-ai:mastra-evals
+  name: Mastra Evals
+  description: Built-in evaluation library with model-graded (LLM-as-judge), rule-based, and statistical metrics
+    for measuring agent output quality, hallucination, faithfulness, relevance, bias, toxicity, and answer
+    correctness. Evals run locally or against Mastra Cloud and emit traces alongside production runs.
+  humanURL: https://mastra.ai/docs/evals/overview
+  tags:
+  - Evaluation
+  - Testing
+  - LLM-as-Judge
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/evals/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/packages/evals
+  - type: PackageManager
+    url: https://www.npmjs.com/package/@mastra/evals
+- aid: mastra-ai:mastra-voice
+  name: Mastra Voice
+  description: Voice abstractions for speech-to-text, text-to-speech, and realtime voice agents with provider
+    adapters for OpenAI (including Realtime API), ElevenLabs, Deepgram, Google, Google Gemini Live, Azure, AWS
+    Nova Sonic, Gladia, Inworld, Murf, PlayAI, Sarvam, Speechify, ModelsLab, and xAI Realtime.
+  humanURL: https://mastra.ai/docs/voice/overview
+  tags:
+  - Voice
+  - Speech
+  - Realtime
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/voice/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/voice
+- aid: mastra-ai:mastra-observability
+  name: Mastra Observability
+  description: OpenTelemetry-native tracing for agents, workflows, tools, and LLM calls with first-party exporters
+    for Mastra Cloud, Langfuse, LangSmith, Braintrust, Arize, Arthur, Laminar, Datadog, Sentry, ClickHouse, and
+    PostHog. AI SpanKind semantic conventions and an OTel bridge are supported out of the box.
+  humanURL: https://mastra.ai/docs/observability/overview
+  tags:
+  - Observability
+  - Tracing
+  - OpenTelemetry
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/observability/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/observability
+- aid: mastra-ai:mastra-cli
+  name: Mastra CLI
+  description: The mastra CLI scaffolds projects (`npm create mastra`), runs the local dev server with hot
+    reload, opens the Studio playground, generates types, runs migrations on memory stores, deploys to Mastra
+    Cloud, and runs evals. Installable as @mastra/cli.
+  humanURL: https://mastra.ai/docs/cli/overview
+  tags:
+  - CLI
+  - Developer Tools
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/cli/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/packages/cli
+  - type: PackageManager
+    url: https://www.npmjs.com/package/mastra
+- aid: mastra-ai:mastra-client-sdks
+  name: Mastra Client SDKs
+  description: Client-side SDKs that talk to a Mastra server from the browser, React applications, or any
+    JavaScript runtime. Includes @mastra/client-js (universal JS client), @mastra/react (React hooks for agents,
+    streaming, and workflows), and @mastra/ai-sdk (adapters for the Vercel AI SDK UI primitives).
+  humanURL: https://mastra.ai/docs/client-sdks/overview
+  tags:
+  - SDK
+  - Client
+  - React
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/client-sdks/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/client-sdks
+  - type: PackageManager
+    url: https://www.npmjs.com/package/@mastra/client-js
+- aid: mastra-ai:mastra-deployers
+  name: Mastra Deployers
+  description: Deployer packages that bundle a Mastra app for a target runtime. Built-in deployers cover Mastra
+    Cloud, Cloudflare Workers, Vercel, and Netlify. Custom deployers can be written for any Node-compatible
+    platform.
+  humanURL: https://mastra.ai/docs/deployment/overview
+  tags:
+  - Deployment
+  - Serverless
+  - Edge
+  properties:
+  - type: Documentation
+    url: https://mastra.ai/docs/deployment/overview
+  - type: SourceCode
+    url: https://github.com/mastra-ai/mastra/tree/main/deployers
+common:
+- type: Website
+  url: https://mastra.ai
+- type: Documentation
+  url: https://mastra.ai/docs
+- type: GitHub
+  url: https://github.com/mastra-ai/mastra
+- type: GitHubOrg
+  url: https://github.com/mastra-ai
+- type: Blog
+  url: https://mastra.ai/blog
+- type: ChangeLog
+  url: https://github.com/mastra-ai/mastra/releases
+  name: GitHub Releases
+- type: Pricing
+  url: https://mastra.ai/pricing
+- type: PackageManager
+  url: https://www.npmjs.com/org/mastra
+  name: npm @mastra Org
+- type: Examples
+  url: https://github.com/mastra-ai/mastra/tree/main/examples
+- type: Templates
+  url: https://mastra.ai/templates
+- type: Community
+  url: https://discord.gg/BTYqqHKUrf
+  name: Discord
+- type: XTwitter
+  url: https://x.com/mastra_ai
+- type: LinkedIn
+  url: https://www.linkedin.com/company/mastra-ai
+- type: YouTube
+  url: https://www.youtube.com/@mastra-ai
+- type: Course
+  url: https://mastra.ai/course
+  name: Mastra MCP Course
+- type: Book
+  url: https://mastra.ai/book
+  name: Principles of Building AI Agents
+- type: Podcast
+  url: https://mastra.ai/agent-hour
+  name: Agent Hour
+- type: License
+  url: https://github.com/mastra-ai/mastra/blob/main/LICENSE.md
+  name: Apache 2.0 + Mastra Enterprise License
+- type: YCombinator
+  url: https://www.ycombinator.com/companies/mastra
+- type: Crunchbase
+  url: https://www.crunchbase.com/organization/mastra-44ba
+overlays:
+- type: APIs.io Search
+  url: overlays/apis-io-search.yml
+- type: API Evangelist Ratings
+  url: overlays/api-evangelist-ratings.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
